@@ -17,13 +17,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faB-DY-eXw">
-                                <rect key="frame" x="66" y="722" width="260" height="35"/>
+                                <rect key="frame" x="66" y="700" width="260" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Get Start !"/>
+                                <connections>
+                                    <action selector="btnMainStart:" destination="Ct0-f8-rtC" eventType="touchUpInside" id="1Eo-Im-4kh"/>
+                                    <segue destination="C5g-oX-qb2" kind="show" id="mcv-rB-xzg"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="LYE-wu-SGd">
-                                <rect key="frame" x="59" y="268" width="136" height="128"/>
+                                <rect key="frame" x="47" y="289" width="171" height="145"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DONGDUK" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YS2-jp-Gb7">
@@ -74,14 +78,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OEp-1x-bMR" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="940" y="-8"/>
+            <point key="canvasLocation" x="939.69465648854953" y="-8.4507042253521139"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="VbI-hg-Cb6">
             <objects>
                 <viewController id="hFW-2m-PqL" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EDw-Fa-3jU">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lz-4B-kiR">
@@ -129,12 +133,12 @@
             </objects>
             <point key="canvasLocation" x="2763" y="-8"/>
         </scene>
-        <!--View Controller-->
+        <!--Join View Controller-->
         <scene sceneID="sAI-lG-Lh8">
             <objects>
-                <viewController id="C5g-oX-qb2" sceneMemberID="viewController">
+                <viewController id="C5g-oX-qb2" customClass="JoinViewController" customModule="likelion12th_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NbL-dO-L6S">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Mrc-hB-IJx">
@@ -150,6 +154,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Get Start !"/>
+                                <connections>
+                                    <action selector="btnStart:" destination="C5g-oX-qb2" eventType="touchUpInside" id="Ves-1z-Ufr"/>
+                                    <segue destination="hFW-2m-PqL" kind="show" id="kn2-XX-caX"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="이름을 입력해주세요. " borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ovM-5o-OsZ">
                                 <rect key="frame" x="66" y="308" width="272" height="34"/>
@@ -161,6 +169,11 @@
                         <viewLayoutGuide key="safeArea" id="S3g-jd-r4i"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="5wo-Fb-qXJ"/>
+                    <connections>
+                        <outlet property="nameField" destination="ovM-5o-OsZ" id="WWu-Bz-9Zf"/>
+                        <outlet property="selectStatus" destination="Mrc-hB-IJx" id="a6M-hF-cFd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKQ-Gu-i3d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
