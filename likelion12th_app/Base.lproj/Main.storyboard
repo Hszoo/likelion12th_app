@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ct0-f8-rtC">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23094" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="CQ2-3Q-sQF">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
@@ -75,17 +75,18 @@
                         <viewLayoutGuide key="safeArea" id="svV-Gq-RyK"/>
                         <color key="backgroundColor" red="1" green="0.89867650139999999" blue="0.95242570650000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
+                    <navigationItem key="navigationItem" id="dj4-Bc-YmW"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OEp-1x-bMR" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="939.69465648854953" y="-8.4507042253521139"/>
+            <point key="canvasLocation" x="1866.4122137404579" y="-8.4507042253521139"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="VbI-hg-Cb6">
             <objects>
                 <viewController id="hFW-2m-PqL" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EDw-Fa-3jU">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lz-4B-kiR">
@@ -100,12 +101,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="12기 지난 활동 모아보기"/>
+                                <connections>
+                                    <segue destination="foa-z3-YLS" kind="show" id="ZlH-f3-uHC"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOH-bp-5ha">
                                 <rect key="frame" x="60" y="531" width="273" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="운영진에게 편지 남기기"/>
+                                <connections>
+                                    <segue destination="76Q-VE-dfT" kind="show" id="Xol-y1-gMn"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awU-QK-oz1">
                                 <rect key="frame" x="60" y="616" width="273" height="55"/>
@@ -118,6 +125,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="멋사 12기 트리"/>
+                                <connections>
+                                    <segue destination="J6d-a5-hfC" kind="show" id="wq3-Dx-kDj"/>
+                                </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.crop.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Aun-Ip-6gp">
                                 <rect key="frame" x="55" y="147.66666666666669" width="282" height="191"/>
@@ -131,14 +141,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ioo-Av-M4D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2763" y="-8"/>
+            <point key="canvasLocation" x="3689.3129770992364" y="-8.4507042253521139"/>
         </scene>
         <!--Join View Controller-->
         <scene sceneID="sAI-lG-Lh8">
             <objects>
                 <viewController id="C5g-oX-qb2" customClass="JoinViewController" customModule="likelion12th_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NbL-dO-L6S">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Mrc-hB-IJx">
@@ -177,7 +187,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKQ-Gu-i3d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1850" y="-8"/>
+            <point key="canvasLocation" x="2776.3358778625952" y="-8.4507042253521139"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="uWQ-JM-mY3">
@@ -198,10 +208,11 @@
                         <viewLayoutGuide key="safeArea" id="JFJ-OV-AcH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="o37-lK-3QF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uf9-G4-PqU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3766" y="-318"/>
+            <point key="canvasLocation" x="4692.3664122137407" y="-318.3098591549296"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="jkl-n8-6hr">
@@ -222,10 +233,11 @@
                         <viewLayoutGuide key="safeArea" id="iYG-RT-mOs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="rbb-kU-dST"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXj-is-9Xt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4579" y="-318"/>
+            <point key="canvasLocation" x="3689" y="699"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Rbj-Mm-DDC">
@@ -256,15 +268,19 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="전송하기"/>
+                                <connections>
+                                    <segue destination="hFW-2m-PqL" kind="show" id="8Hz-xD-yxk"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="XX1-JL-5c9"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="Hsb-lg-H3O"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Iqj-rb-hGJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4579" y="413"/>
+            <point key="canvasLocation" x="5504.5801526717551" y="412.67605633802822"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="krI-rp-Cnw">
@@ -286,48 +302,72 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="오승연"/>
+                                <connections>
+                                    <segue destination="gBb-jI-oSY" kind="show" id="8YX-p3-Yyw"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qND-I2-vc8">
                                 <rect key="frame" x="61" y="303" width="69" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="홍성주"/>
+                                <connections>
+                                    <segue destination="gBb-jI-oSY" kind="show" id="6xK-rQ-i1I"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfT-bD-iS5">
                                 <rect key="frame" x="262" y="303" width="69" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="방혜진"/>
+                                <connections>
+                                    <segue destination="gBb-jI-oSY" kind="show" id="GcT-Kc-4hM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeW-Rt-MXC">
                                 <rect key="frame" x="61" y="423" width="69" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="박소정"/>
+                                <connections>
+                                    <segue destination="gBb-jI-oSY" kind="show" id="n0I-CU-G2u"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsg-Ch-gHI">
                                 <rect key="frame" x="161" y="424" width="69" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="박주희"/>
+                                <connections>
+                                    <segue destination="gBb-jI-oSY" kind="show" id="zvT-zj-jeA"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bas-YP-V16">
                                 <rect key="frame" x="262" y="425" width="69" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="이채연"/>
+                                <connections>
+                                    <segue destination="gBb-jI-oSY" kind="show" id="Aas-5n-Ds2"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVB-34-35r">
                                 <rect key="frame" x="62" y="552" width="69" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="장우림"/>
+                                <connections>
+                                    <segue destination="gBb-jI-oSY" kind="show" id="ZqR-sg-msN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXR-vG-zV7">
                                 <rect key="frame" x="161" y="552" width="69" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="노소은"/>
+                                <connections>
+                                    <segue destination="gBb-jI-oSY" kind="show" id="p53-dj-NUJ"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDy-d0-cRG">
                                 <rect key="frame" x="262" y="552" width="69" height="35"/>
@@ -340,17 +380,43 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="운영진 전체 전송"/>
+                                <connections>
+                                    <segue destination="gBb-jI-oSY" kind="show" id="ndB-xB-RnX"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nYF-GG-ige"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <navigationItem key="navigationItem" id="2rz-4U-KBY"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hXk-kp-Tbb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3785" y="413"/>
+            <point key="canvasLocation" x="4710.6870229007627" y="412.67605633802822"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="krS-VO-aBb">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="CQ2-3Q-sQF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="HXX-mZ-LLN">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Ct0-f8-rtC" kind="relationship" relationship="rootViewController" id="RrA-Lp-1FU"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nKd-Eb-Jol" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="939.69465648854953" y="-8.4507042253521139"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="zvT-zj-jeA"/>
+        <segue reference="kn2-XX-caX"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="logo.png" width="250" height="250"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
