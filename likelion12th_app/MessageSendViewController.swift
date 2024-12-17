@@ -59,6 +59,28 @@ class MessageSendViewController: UIViewController {
 
     /* 메시지 전체 전송 */
     @IBAction func btnSendAll(_ sender: UIButton) {
+        guard let receiverText = receiver.text, !receiverText.isEmpty else {
+            showAlert(message: "수신자를 입력해주세요.")
+            return
+        }
+            
+        guard let contentText = content.text, !contentText.isEmpty else {
+            showAlert(message: "메시지 내용을 입력해주세요.")
+            return
+        }
+            
+        let messageRequest = MessageRequest(sender: senderName, receiver: "all", contents: contentText)
+            
+        NetworkManager.shared.postRequest(to: "/message/new", body: messageRequest) { result in DispatchQueue.main.async {
+                switch result {
+                case .success(let data):
+                    let responseMessage = String(data: data, encoding: .utf8) ?? "응답 없음"
+                    self.showAlert(message: "전송 성공: \(responseMessage)")
+                case .failure(let error):
+                    self.showAlert(message: "전송 실패: \(error.localizedDescription)")
+                }
+            }
+        }
            
     }
     
