@@ -81,10 +81,10 @@
             </objects>
             <point key="canvasLocation" x="1866.4122137404579" y="-8.4507042253521139"/>
         </scene>
-        <!--View Controller-->
+        <!--Member View Controller-->
         <scene sceneID="VbI-hg-Cb6">
             <objects>
-                <viewController id="hFW-2m-PqL" sceneMemberID="viewController">
+                <viewController id="hFW-2m-PqL" customClass="MemberViewController" customModule="likelion12th_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EDw-Fa-3jU">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,7 +109,7 @@
                                 <rect key="frame" x="60" y="531" width="273" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="운영진에게 편지 남기기"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="편지 남기기"/>
                                 <connections>
                                     <segue destination="76Q-VE-dfT" kind="show" id="Xol-y1-gMn"/>
                                 </connections>
@@ -239,16 +239,40 @@
             </objects>
             <point key="canvasLocation" x="3689" y="699"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="Rbj-Mm-DDC">
+        <!--편지 쓰기-->
+        <scene sceneID="krI-rp-Cnw">
             <objects>
-                <viewController id="gBb-jI-oSY" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="8OJ-T9-7em">
+                <viewController id="76Q-VE-dfT" customClass="MessageSendViewController" customModule="likelion12th_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sj2-Kl-w34">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="aGt-8B-d6l">
-                                <rect key="frame" x="76" y="346" width="240" height="128"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="joB-PT-Yj7">
+                                <rect key="frame" x="61" y="699" width="270" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="동덕 멋사 12기 전체 전송"/>
+                                <connections>
+                                    <action selector="btnSendAll:" destination="76Q-VE-dfT" eventType="touchUpInside" id="NSn-q7-Ad4"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eoR-KL-Zmb">
+                                <rect key="frame" x="155" y="570" width="83" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="전송하기"/>
+                                <connections>
+                                    <action selector="btnSendMessage:" destination="76Q-VE-dfT" eventType="touchUpInside" id="P70-Ui-DW6"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="받는 사람 입력" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JQE-OS-g8u">
+                                <rect key="frame" x="148" y="452" width="109" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sLi-3I-8wZ">
+                                <rect key="frame" x="61" y="264" width="270" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </string>
@@ -256,143 +280,19 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="... 에게 편지 남기기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CZg-Os-y9O">
-                                <rect key="frame" x="131" y="219" width="130" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vaN-E7-9gJ">
-                                <rect key="frame" x="155" y="688" width="83" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="전송하기"/>
-                                <connections>
-                                    <segue destination="hFW-2m-PqL" kind="show" id="8Hz-xD-yxk"/>
-                                </connections>
-                            </button>
-                        </subviews>
-                        <viewLayoutGuide key="safeArea" id="XX1-JL-5c9"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="Hsb-lg-H3O"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Iqj-rb-hGJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="5504.5801526717551" y="412.67605633802822"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="krI-rp-Cnw">
-            <objects>
-                <viewController id="76Q-VE-dfT" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="sj2-Kl-w34">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="운영진에게 편지 남기기" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T0u-e6-fPA">
-                                <rect key="frame" x="118" y="189" width="156" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PbG-q1-I3T">
-                                <rect key="frame" x="161" y="302" width="69" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="오승연"/>
-                                <connections>
-                                    <segue destination="gBb-jI-oSY" kind="show" id="8YX-p3-Yyw"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qND-I2-vc8">
-                                <rect key="frame" x="61" y="303" width="69" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="홍성주"/>
-                                <connections>
-                                    <segue destination="gBb-jI-oSY" kind="show" id="6xK-rQ-i1I"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sfT-bD-iS5">
-                                <rect key="frame" x="262" y="303" width="69" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="방혜진"/>
-                                <connections>
-                                    <segue destination="gBb-jI-oSY" kind="show" id="GcT-Kc-4hM"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jeW-Rt-MXC">
-                                <rect key="frame" x="61" y="423" width="69" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="박소정"/>
-                                <connections>
-                                    <segue destination="gBb-jI-oSY" kind="show" id="n0I-CU-G2u"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dsg-Ch-gHI">
-                                <rect key="frame" x="161" y="424" width="69" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="박주희"/>
-                                <connections>
-                                    <segue destination="gBb-jI-oSY" kind="show" id="zvT-zj-jeA"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bas-YP-V16">
-                                <rect key="frame" x="262" y="425" width="69" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="이채연"/>
-                                <connections>
-                                    <segue destination="gBb-jI-oSY" kind="show" id="Aas-5n-Ds2"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vVB-34-35r">
-                                <rect key="frame" x="62" y="552" width="69" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="장우림"/>
-                                <connections>
-                                    <segue destination="gBb-jI-oSY" kind="show" id="ZqR-sg-msN"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IXR-vG-zV7">
-                                <rect key="frame" x="161" y="552" width="69" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="노소은"/>
-                                <connections>
-                                    <segue destination="gBb-jI-oSY" kind="show" id="p53-dj-NUJ"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FDy-d0-cRG">
-                                <rect key="frame" x="262" y="552" width="69" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="주현정"/>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="joB-PT-Yj7">
-                                <rect key="frame" x="61" y="699" width="270" height="35"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="운영진 전체 전송"/>
-                                <connections>
-                                    <segue destination="gBb-jI-oSY" kind="show" id="ndB-xB-RnX"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nYF-GG-ige"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="2rz-4U-KBY"/>
+                    <navigationItem key="navigationItem" title="편지 쓰기" id="2rz-4U-KBY"/>
+                    <connections>
+                        <outlet property="content" destination="sLi-3I-8wZ" id="aNE-5U-1pA"/>
+                        <outlet property="receiver" destination="JQE-OS-g8u" id="xKN-BN-MTh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hXk-kp-Tbb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4710.6870229007627" y="412.67605633802822"/>
+            <point key="canvasLocation" x="4709.160305343511" y="412.67605633802822"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="krS-VO-aBb">
@@ -413,10 +313,6 @@
             <point key="canvasLocation" x="939.69465648854953" y="-8.4507042253521139"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="zvT-zj-jeA"/>
-        <segue reference="kn2-XX-caX"/>
-    </inferredMetricsTieBreakers>
     <resources>
         <image name="logo.png" width="250" height="250"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
