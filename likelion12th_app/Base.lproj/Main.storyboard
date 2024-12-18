@@ -81,7 +81,7 @@
             </objects>
             <point key="canvasLocation" x="1866.4122137404579" y="-8.4507042253521139"/>
         </scene>
-        <!--Member View Controller-->
+        <!--Home-->
         <scene sceneID="VbI-hg-Cb6">
             <objects>
                 <viewController id="hFW-2m-PqL" customClass="MemberViewController" customModule="likelion12th_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -90,23 +90,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lz-4B-kiR">
-                                <rect key="frame" x="138" y="371" width="116" height="27"/>
+                                <rect key="frame" x="138" y="334.66666666666669" width="116" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kiu-5r-kkJ">
-                                <rect key="frame" x="60" y="446" width="273" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="12기 지난 활동 모아보기"/>
-                                <connections>
-                                    <segue destination="foa-z3-YLS" kind="show" id="ZlH-f3-uHC"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOH-bp-5ha">
-                                <rect key="frame" x="60" y="531" width="273" height="55"/>
+                                <rect key="frame" x="60" y="492" width="273" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="편지 남기기"/>
@@ -115,13 +106,25 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awU-QK-oz1">
-                                <rect key="frame" x="60" y="616" width="273" height="55"/>
+                                <rect key="frame" x="60" y="572" width="273" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="내 편지함"/>
+                                <connections>
+                                    <segue destination="anj-32-CGV" kind="show" id="zhm-5F-Au2"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IWe-LJ-J8z">
+                                <rect key="frame" x="60" y="653" width="273" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="카메라"/>
+                                <connections>
+                                    <segue destination="VoM-Lq-DjJ" kind="show" id="afy-YR-cxr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxM-Tf-aa4">
-                                <rect key="frame" x="60" y="707" width="273" height="55"/>
+                                <rect key="frame" x="60" y="729" width="273" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="멋사 12기 트리"/>
@@ -130,14 +133,23 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.crop.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Aun-Ip-6gp">
-                                <rect key="frame" x="55" y="147.66666666666669" width="282" height="191"/>
+                                <rect key="frame" x="55" y="111.66666666666669" width="282" height="191"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kiu-5r-kkJ">
+                                <rect key="frame" x="60" y="414" width="273" height="55"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="12기 지난 활동 모아보기"/>
+                                <connections>
+                                    <segue destination="foa-z3-YLS" kind="show" id="ZlH-f3-uHC"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hRR-Xa-Qf3"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="oR6-JX-Qxt"/>
+                    <navigationItem key="navigationItem" title="Home" id="oR6-JX-Qxt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ioo-Av-M4D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -189,55 +201,80 @@
             </objects>
             <point key="canvasLocation" x="2776.3358778625952" y="-8.4507042253521139"/>
         </scene>
-        <!--View Controller-->
+        <!--활동 몰아보기-->
         <scene sceneID="uWQ-JM-mY3">
             <objects>
                 <viewController id="foa-z3-YLS" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="vGZ-pS-gdi">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="멋사 12기 몰아보기 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gNm-It-ma0">
-                                <rect key="frame" x="129" y="189" width="134" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="JFJ-OV-AcH"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="o37-lK-3QF"/>
+                    <navigationItem key="navigationItem" title="활동 몰아보기" id="o37-lK-3QF"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uf9-G4-PqU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4692.3664122137407" y="-318.3098591549296"/>
+            <point key="canvasLocation" x="4518" y="-770"/>
         </scene>
-        <!--View Controller-->
+        <!--멋사 트리-->
         <scene sceneID="jkl-n8-6hr">
             <objects>
                 <viewController id="J6d-a5-hfC" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="u5B-98-hZP">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="멋사 트리" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kc2-bw-5iC">
-                                <rect key="frame" x="175" y="182" width="64" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <viewLayoutGuide key="safeArea" id="iYG-RT-mOs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
-                    <navigationItem key="navigationItem" id="rbb-kU-dST"/>
+                    <navigationItem key="navigationItem" title="멋사 트리" id="rbb-kU-dST"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXj-is-9Xt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3689" y="699"/>
+            <point key="canvasLocation" x="4085" y="790"/>
+        </scene>
+        <!--Camera View Controller-->
+        <scene sceneID="k2I-Rr-be5">
+            <objects>
+                <viewController id="VoM-Lq-DjJ" customClass="CameraViewController" customModule="likelion12th_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0CH-Uc-aek" customClass="Camera">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GU0-6A-QDC">
+                                <rect key="frame" x="42" y="149" width="308" height="404"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NhC-Ot-b5a">
+                                <rect key="frame" x="153" y="608" width="88" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="사진 찍기"/>
+                                <connections>
+                                    <action selector="btnCamera:" destination="VoM-Lq-DjJ" eventType="touchUpInside" id="Zba-h6-is9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ts7-Jh-8dG">
+                                <rect key="frame" x="162" y="687" width="69" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="꾸미기"/>
+                                <connections>
+                                    <action selector="btnDecorate:" destination="VoM-Lq-DjJ" eventType="touchUpInside" id="uNF-ql-Lin"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Dxe-b7-Gqv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Ipf-Tr-Dsv"/>
+                    <connections>
+                        <outlet property="imgView" destination="GU0-6A-QDC" id="vDU-Z2-7YS"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tdA-mJ-pJn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5330.5343511450383" y="444.36619718309862"/>
         </scene>
         <!--편지 쓰기-->
         <scene sceneID="krI-rp-Cnw">
@@ -292,7 +329,23 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hXk-kp-Tbb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4709.160305343511" y="412.67605633802822"/>
+            <point key="canvasLocation" x="5332" y="-285"/>
+        </scene>
+        <!--내 편지함-->
+        <scene sceneID="iOx-QI-lIf">
+            <objects>
+                <viewController id="anj-32-CGV" customClass="MyMessageViewController" customModule="likelion12th_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="eO6-46-jgt" customClass="MyMessage">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="dc6-jz-hh9"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="내 편지함" id="VO2-gd-fhv" customClass="My"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N70-98-bCH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3218" y="789"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="krS-VO-aBb">
