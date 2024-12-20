@@ -20,6 +20,7 @@ class JoinViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboard()
     }
     
     /* 프로필 사진 선택 */

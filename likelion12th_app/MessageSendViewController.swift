@@ -24,6 +24,7 @@ class MessageSendViewController: UIViewController, UITextFieldDelegate, UITextVi
         
     override func viewDidLoad() {
         super.viewDidLoad()
+        hideKeyboard()
 
         // Delegate 설정
         receiver.delegate = self
