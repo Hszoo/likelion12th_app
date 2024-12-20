@@ -6,6 +6,7 @@
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="faB-DY-eXw">
-                                <rect key="frame" x="30" y="709" width="333" height="52"/>
+                                <rect key="frame" x="30" y="709" width="333" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Get Start !">
@@ -29,10 +30,6 @@
                                     <segue destination="C5g-oX-qb2" kind="show" id="mcv-rB-xzg"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="IMG_0845.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="tOg-cz-JsU">
-                                <rect key="frame" x="-13" y="391" width="419" height="260"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="DONGDUK" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YS2-jp-Gb7">
                                 <rect key="frame" x="16" y="248" width="361" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -69,9 +66,30 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="70R-HS-REA">
+                                <rect key="frame" x="0.0" y="379" width="393" height="206"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="v7J-Nb-DXZ">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="dLy-Mc-JeP">
+                                        <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="gPO-pk-r1l">
+                                            <rect key="frame" x="0.0" y="0.0" width="127.99999999999997" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="svV-Gq-RyK"/>
-                        <color key="backgroundColor" red="0.6373228092783505" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="backgroundColor" red="0.75358408505154639" green="0.16464928576896742" blue="0.16446909250841726" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <color key="tintColor" red="0.015264390839999999" green="0.35567010310000002" blue="0.00079008635839999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" id="dj4-Bc-YmW"/>
@@ -80,7 +98,7 @@
             </objects>
             <point key="canvasLocation" x="1866.4122137404579" y="-8.4507042253521139"/>
         </scene>
-        <!--Home-->
+        <!--Member View Controller-->
         <scene sceneID="VbI-hg-Cb6">
             <objects>
                 <viewController id="hFW-2m-PqL" customClass="MemberViewController" customModule="likelion12th_app" customModuleProvider="target" sceneMemberID="viewController">
@@ -88,16 +106,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lz-4B-kiR">
-                                <rect key="frame" x="138" y="334.66666666666669" width="116" height="27"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOH-bp-5ha">
-                                <rect key="frame" x="60" y="512" width="273" height="55"/>
+                                <rect key="frame" x="60" y="494" width="273" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="1" green="0.72419737169999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="편지 남기기"/>
                                 <connections>
@@ -105,8 +117,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="awU-QK-oz1">
-                                <rect key="frame" x="60" y="600" width="273" height="55"/>
+                                <rect key="frame" x="60" y="582" width="273" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="1" green="0.72419737169999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="내 편지함"/>
                                 <connections>
@@ -114,7 +127,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxM-Tf-aa4">
-                                <rect key="frame" x="60" y="684" width="273" height="55"/>
+                                <rect key="frame" x="60" y="666" width="273" height="55"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="멋사 12기 트리"/>
@@ -122,28 +135,27 @@
                                     <segue destination="J6d-a5-hfC" kind="show" id="wq3-Dx-kDj"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.crop.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Aun-Ip-6gp">
-                                <rect key="frame" x="55" y="111.66666666666669" width="282" height="191"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="이름" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Lz-4B-kiR">
+                                <rect key="frame" x="138" y="413.33333333333337" width="116" height="27"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="27"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Aun-Ip-6gp">
+                                <rect key="frame" x="76" y="197.33333333333337" width="241" height="172"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <imageReference key="image" image="person.crop.circle.fill" catalog="system" symbolScale="small"/>
                             </imageView>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kiu-5r-kkJ">
-                                <rect key="frame" x="64" y="422" width="273" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="tinted" title="12기 지난 활동 모아보기"/>
-                                <connections>
-                                    <segue destination="foa-z3-YLS" kind="show" id="ZlH-f3-uHC"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="hRR-Xa-Qf3"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.63921570780000003" green="0.12549020350000001" blue="0.082352943720000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="oR6-JX-Qxt"/>
+                    <navigationItem key="navigationItem" id="oR6-JX-Qxt"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ioo-Av-M4D" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3633" y="-8"/>
+            <point key="canvasLocation" x="3632.8244274809158" y="-8.4507042253521139"/>
         </scene>
         <!--Join View Controller-->
         <scene sceneID="sAI-lG-Lh8">
@@ -154,45 +166,49 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Mrc-hB-IJx">
-                                <rect key="frame" x="133" y="192" width="127" height="32"/>
+                                <rect key="frame" x="71" y="164" width="262" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
                                     <segment title="아기사자"/>
                                     <segment title="운영진"/>
                                 </segments>
+                                <color key="selectedSegmentTintColor" red="0.14901961389999999" green="0.36078432199999999" blue="0.086274504660000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dpg-NA-DPu">
-                                <rect key="frame" x="72" y="722" width="260" height="35"/>
+                                <rect key="frame" x="41" y="715" width="311" height="56"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="gray" title="Get Start !"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Get Start !">
+                                    <fontDescription key="titleFontDescription" type="italicSystem" pointSize="23"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="btnStart:" destination="C5g-oX-qb2" eventType="touchUpInside" id="Ves-1z-Ufr"/>
                                     <segue destination="hFW-2m-PqL" kind="show" id="kn2-XX-caX"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름을 입력해주세요. " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ovM-5o-OsZ">
-                                <rect key="frame" x="66" y="529" width="272" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름을 입력해주세요. " textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ovM-5o-OsZ">
+                                <rect key="frame" x="66" y="270" width="272" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUk-7u-XHB">
-                                <rect key="frame" x="106" y="453" width="180" height="35"/>
+                                <rect key="frame" x="63" y="524.66666666666674" width="266" height="49"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="앨범에서 사진 불러오기"/>
+                                <buttonConfiguration key="configuration" style="tinted" title="앨범에서 사진 불러오기"/>
                                 <connections>
                                     <action selector="selectProfileImg:" destination="C5g-oX-qb2" eventType="touchUpInside" id="krm-gk-tnh"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3b5-aT-Pmv">
-                                <rect key="frame" x="76" y="294.66666666666669" width="240" height="128"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="photo.artframe.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3b5-aT-Pmv">
+                                <rect key="frame" x="72" y="369.66666666666674" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" red="0.52549022440000004" green="0.1294117719" blue="0.062745101750000004" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                             </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="S3g-jd-r4i"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.63921570780000003" green="0.12549020350000001" blue="0.082352943720000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" id="5wo-Fb-qXJ"/>
                     <connections>
@@ -204,22 +220,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CKQ-Gu-i3d" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2776.3358778625952" y="-8.4507042253521139"/>
-        </scene>
-        <!--활동 몰아보기-->
-        <scene sceneID="uWQ-JM-mY3">
-            <objects>
-                <viewController id="foa-z3-YLS" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="vGZ-pS-gdi">
-                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="JFJ-OV-AcH"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="활동 몰아보기" id="o37-lK-3QF"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="uf9-G4-PqU" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3633" y="-730"/>
         </scene>
         <!--Tree View Controller-->
         <scene sceneID="jkl-n8-6hr">
@@ -245,7 +245,7 @@
                                     <fragment content="Good Bye Dongduk 12th !">
                                         <attributes>
                                             <color key="NSColor" red="1" green="0.72419737168370057" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                            <font key="NSFont" size="29" name=".SFNS-Regular"/>
+                                            <font key="NSFont" metaFont="system" size="29"/>
                                             <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
                                         </attributes>
                                     </fragment>
@@ -376,7 +376,7 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="nYF-GG-ige"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.63921570780000003" green="0.12549020350000001" blue="0.082352943720000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" title="편지 쓰기" id="2rz-4U-KBY"/>
                     <connections>
@@ -386,7 +386,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hXk-kp-Tbb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4822" y="264"/>
+            <point key="canvasLocation" x="4653" y="-294"/>
         </scene>
         <!--내 편지함-->
         <scene sceneID="iOx-QI-lIf">
@@ -396,13 +396,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="dc6-jz-hh9"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" red="0.63921570780000003" green="0.12549020350000001" blue="0.082352943720000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
                     <navigationItem key="navigationItem" title="내 편지함" id="VO2-gd-fhv" customClass="My"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N70-98-bCH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4822" y="-440"/>
+            <point key="canvasLocation" x="4653" y="401"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="krS-VO-aBb">
@@ -425,11 +425,10 @@
     </scenes>
     <color key="tintColor" red="0.015264390839999999" green="0.35567010310000002" blue="0.00079008635839999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
     <resources>
-        <image name="IMG_0845.jpg" width="471" height="447.5"/>
         <image name="app_tree.png" width="387.75" height="488.25"/>
         <image name="camera.circle" catalog="system" width="128" height="123"/>
-        <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="photo.artframe.circle" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
