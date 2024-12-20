@@ -181,12 +181,25 @@
                                     <segue destination="hFW-2m-PqL" kind="show" id="kn2-XX-caX"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="이름을 입력해주세요. " borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ovM-5o-OsZ">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름을 입력해주세요. " textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ovM-5o-OsZ">
                                 <rect key="frame" x="66" y="308" width="272" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.crop.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="3b5-aT-Pmv">
+                                <rect key="frame" x="76" y="416" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uUk-7u-XHB">
+                                <rect key="frame" x="113" y="572" width="180" height="35"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="앨범에서 사진 불러오기"/>
+                                <connections>
+                                    <action selector="selectProfileImg:" destination="C5g-oX-qb2" eventType="touchUpInside" id="krm-gk-tnh"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="S3g-jd-r4i"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -194,6 +207,7 @@
                     <navigationItem key="navigationItem" id="5wo-Fb-qXJ"/>
                     <connections>
                         <outlet property="nameField" destination="ovM-5o-OsZ" id="WWu-Bz-9Zf"/>
+                        <outlet property="profileImgView" destination="3b5-aT-Pmv" id="Bmj-rX-dDN"/>
                         <outlet property="selectStatus" destination="Mrc-hB-IJx" id="a6M-hF-cFd"/>
                     </connections>
                 </viewController>
@@ -302,17 +316,16 @@
                                     <action selector="btnSendMessage:" destination="76Q-VE-dfT" eventType="touchUpInside" id="P70-Ui-DW6"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="받는 사람 입력" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JQE-OS-g8u">
-                                <rect key="frame" x="148" y="452" width="109" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vRB-Fa-lKR">
+                                <rect key="frame" x="105" y="468" width="183" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="sLi-3I-8wZ">
-                                <rect key="frame" x="61" y="264" width="270" height="128"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore e" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="n5v-vd-Fpb">
+                                <rect key="frame" x="76" y="212" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis </string>
                                 <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -323,13 +336,13 @@
                     </view>
                     <navigationItem key="navigationItem" title="편지 쓰기" id="2rz-4U-KBY"/>
                     <connections>
-                        <outlet property="content" destination="sLi-3I-8wZ" id="aNE-5U-1pA"/>
-                        <outlet property="receiver" destination="JQE-OS-g8u" id="xKN-BN-MTh"/>
+                        <outlet property="content" destination="n5v-vd-Fpb" id="quv-kQ-eNj"/>
+                        <outlet property="receiver" destination="vRB-Fa-lKR" id="MA9-YO-7rk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hXk-kp-Tbb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5332" y="-285"/>
+            <point key="canvasLocation" x="5330.5343511450383" y="-285.21126760563379"/>
         </scene>
         <!--내 편지함-->
         <scene sceneID="iOx-QI-lIf">
@@ -368,6 +381,7 @@
     </scenes>
     <resources>
         <image name="logo.png" width="250" height="250"/>
+        <image name="person.crop.circle" catalog="system" width="128" height="123"/>
         <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
         <systemColor name="labelColor">
             <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

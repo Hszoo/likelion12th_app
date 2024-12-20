@@ -14,19 +14,20 @@ struct MessageRequest: Codable {
     let contents: String
 }
 
-class MessageSendViewController: UIViewController {
+class MessageSendViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
     @IBOutlet var content: UITextView!
     @IBOutlet var receiver: UITextField!
     
     let senderName = "sj"
-    let apiURL: String = "/message/new"
+    let endPoint: String = "/message/new"
         
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        // Delegate 설정
+        receiver.delegate = self
+        content.delegate = self
     }
     
     private func sendMessage(to receiverName: String) {
@@ -34,10 +35,16 @@ class MessageSendViewController: UIViewController {
             showAlert(message: "메시지 내용을 입력해주세요.")
             return
         }
+
+        guard let receiverName = receiver.text, !receiverName.isEmpty else {
+            showAlert(message: "수신자를 입력해주세요.")
+            return
+        }
         
-        let messageRequest = MessageRequest(sender: senderName, receiver: receiverName, contents: contentText)
+        _ = MessageRequest(sender: senderName, receiver: receiverName, contents: contentText)
+        print(contentText)
         
-        NetworkManager.shared.postMessageData(to: apiURL, body: messageRequest) { result in
+        NetworkManager.shared.postMessageData(to: endPoint, sender: senderName, receiver: receiverName, content: contentText) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
@@ -63,7 +70,6 @@ class MessageSendViewController: UIViewController {
     /* 메시지 전체 전송 */
     @IBAction func btnSendAll(_ sender: UIButton) {
         sendMessage(to: "all")
-           
     }
     
     private func showAlert(message: String) {
@@ -71,7 +77,19 @@ class MessageSendViewController: UIViewController {
         alert.addAction(UIAlertAction(title: "확인", style: .default))
         present(alert, animated: true)
     }
-
     
-}
+    // delegate 메서드
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        print("TextView editing started")
+    }
 
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("TextField editing started")
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        if textView.text.isEmpty {
+            print("TextView is empty")
+        }
+    }
+}

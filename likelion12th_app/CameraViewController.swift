@@ -17,7 +17,6 @@ class CameraViewController: UIViewController, UINavigationControllerDelegate, UI
     var flagImageSave = false
     
     
-    
     @IBOutlet var imgView: UIImageView!
     
     override func viewDidLoad() {
