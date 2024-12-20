@@ -7,18 +7,14 @@
 
 import UIKit
 
-// 메시지 요청 구조체
-struct MessageRequest: Codable {
-    let sender: String
-    let receiver: String
-    let contents: String
-}
 
 class MessageSendViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
 
     @IBOutlet var content: UITextView!
     @IBOutlet var receiver: UITextField!
+    @IBOutlet var contentImg: UIImageView!
     
+    var ornaments = [Ornament]()
     let senderName = "sj"
     let endPoint: String = "/message/new"
         
@@ -42,6 +38,15 @@ class MessageSendViewController: UIViewController, UITextFieldDelegate, UITextVi
             return
         }
         
+        guard let image = contentImg.image else {
+            showAlert(message: "이미지를 선택해주세요.")
+            return
+        }
+        
+        let newOrnament = Ornament(image: image, text: contentText)
+        ornaments.append(newOrnament)
+        
+        
         NetworkManager.shared.postMessageData(to: endPoint, sender: senderName, receiver: receiverName, content: contentText) { result in
             DispatchQueue.main.async {
                 switch result {
@@ -63,11 +68,16 @@ class MessageSendViewController: UIViewController, UITextFieldDelegate, UITextVi
         }
             
         sendMessage(to: receiverText)
+        _ = navigationController?.popViewController(animated: true)
+        
     }
 
-    /* 메시지 전체 전송 */
+    /* 메시지 트리로 전송 */
     @IBAction func btnSendAll(_ sender: UIButton) {
         sendMessage(to: "all")
+        guard let treeVC = storyboard?.instantiateViewController(withIdentifier: "TreeViewController") as? TreeViewController else { return }
+                treeVC.ornaments = ornaments
+                navigationController?.pushViewController(treeVC, animated: true)
     }
     
     private func showAlert(message: String) {
