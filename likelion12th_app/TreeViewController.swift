@@ -34,6 +34,7 @@ class TreeViewController: UIViewController {
         }
     }
 
+    
     @objc func showMessage(sender: UIButton) {
         let ornament = ornaments[sender.tag] // 클릭된 버튼의 태그를 통해 오너먼트 데이터 참조
         let alert = UIAlertController(title: "입력한 메시지", message: ornament.text, preferredStyle: .alert)
