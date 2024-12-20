@@ -57,9 +57,6 @@ class JoinViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             return
         }
 
-        // 전송할 데이터 생성
-        let memberData = MemberData(name: name, status: status)
-
         // POST 요청 전송
         NetworkManager.shared.postMemberData(to: endPoint, name:name, status: status, imageData: imageData) { result in
             switch result {
@@ -74,15 +71,6 @@ class JoinViewController: UIViewController, UIImagePickerControllerDelegate, UIN
                     // 실패 시 UI 업데이트 (예: 오류 메시지 표시)
                 }
             }
-        }
-        
-        do {
-            let jsonData = try JSONEncoder().encode(memberData)
-            if let jsonString = String(data: jsonData, encoding: .utf8) {
-                print("전송 데이터 JSON: \(jsonString)")
-            }
-        } catch {
-            print("JSON 인코딩 실패: \(error.localizedDescription)")
         }
     }
 }

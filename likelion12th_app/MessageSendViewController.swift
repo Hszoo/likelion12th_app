@@ -35,14 +35,11 @@ class MessageSendViewController: UIViewController, UITextFieldDelegate, UITextVi
             showAlert(message: "메시지 내용을 입력해주세요.")
             return
         }
-
+        
         guard let receiverName = receiver.text, !receiverName.isEmpty else {
             showAlert(message: "수신자를 입력해주세요.")
             return
         }
-        
-        _ = MessageRequest(sender: senderName, receiver: receiverName, contents: contentText)
-        print(contentText)
         
         NetworkManager.shared.postMessageData(to: endPoint, sender: senderName, receiver: receiverName, content: contentText) { result in
             DispatchQueue.main.async {
