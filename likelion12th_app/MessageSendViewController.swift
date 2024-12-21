@@ -38,10 +38,10 @@ class MessageSendViewController: UIViewController, UITextFieldDelegate, UITextVi
             return
         }
         
-        guard let image = contentImg.image else {
-            showAlert(message: "이미지를 선택해주세요.")
-            return
-        }
+//        guard let image = contentImg.image else {
+//            showAlert(message: "이미지를 선택해주세요.")
+//            return
+//        }
         
         NetworkManager.shared.postMessageData(to: endPoint, sender: senderName!, receiver: receiverName, content: contentText) { result in
             DispatchQueue.main.async {

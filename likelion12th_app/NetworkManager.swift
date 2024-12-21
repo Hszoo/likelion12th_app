@@ -95,4 +95,33 @@ class NetworkManager {
         postRequest(to: endpoint, bodyName: "memberData", body: memberData, imageData: imageData, completion: completion)
     }
     
+    // GET: 받은 메시지 가져오기
+    func fetchReceivedMessages(for receiverName: String, completion: @escaping (Result<[Message], Error>) -> Void) {
+        let endpoint = "/receivedMessages?receiverName=\(receiverName)"
+        guard let url = URL(string: baseUrl + endpoint) else {
+            completion(.failure(NSError(domain: "Invalid URL", code: -1, userInfo: nil)))
+            return
+        }
+
+        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+            if let error = error {
+                completion(.failure(error))
+                return
+            }
+
+            guard let data = data else {
+                completion(.failure(NSError(domain: "No data", code: -2, userInfo: nil)))
+                return
+            }
+
+            do {
+                let decoder = JSONDecoder()
+                let messages = try decoder.decode([Message].self, from: data)  // [Message] 배열로 디코딩
+                completion(.success(messages))
+            } catch {
+                completion(.failure(error))
+            }
+        }
+        task.resume()
+    }
 }

@@ -84,10 +84,10 @@
             </objects>
             <point key="canvasLocation" x="2793.1297709923665" y="-8.4507042253521139"/>
         </scene>
-        <!--Member View Controller-->
+        <!--My Page View Controller-->
         <scene sceneID="VbI-hg-Cb6">
             <objects>
-                <viewController id="hFW-2m-PqL" customClass="MemberViewController" customModule="likelion12th_app" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="hFW-2m-PqL" customClass="MyPageViewController" customModule="likelion12th_app" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="EDw-Fa-3jU">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -109,7 +109,7 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="tinted" title="내 편지함"/>
                                 <connections>
-                                    <segue destination="anj-32-CGV" kind="show" id="zhm-5F-Au2"/>
+                                    <segue destination="SwX-As-bFu" kind="show" id="4zy-MO-pt6"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yxM-Tf-aa4">
@@ -175,7 +175,7 @@
                                     <segue destination="hFW-2m-PqL" kind="show" id="kn2-XX-caX"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름을 입력해주세요. " textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ovM-5o-OsZ">
+                            <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="이름을 입력해주세요. (ex. 김멋사)" textAlignment="center" minimumFontSize="20" translatesAutoresizingMaskIntoConstraints="NO" id="ovM-5o-OsZ">
                                 <rect key="frame" x="66" y="270" width="272" height="34"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -253,7 +253,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aXj-is-9Xt" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2774.8091603053435" y="819.71830985915494"/>
+            <point key="canvasLocation" x="4560" y="1113"/>
         </scene>
         <!--Camera View Controller-->
         <scene sceneID="k2I-Rr-be5">
@@ -307,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tdA-mJ-pJn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3633" y="820"/>
+            <point key="canvasLocation" x="5326" y="1113"/>
         </scene>
         <!--편지 쓰기-->
         <scene sceneID="krI-rp-Cnw">
@@ -383,26 +383,51 @@
             </objects>
             <point key="canvasLocation" x="5579.3893129770986" y="-294.36619718309862"/>
         </scene>
+        <!--Message List View Controller-->
+        <scene sceneID="MKp-Wu-ere">
+            <objects>
+                <tableViewController id="SwX-As-bFu" customClass="MessageListViewController" customModule="likelion12th_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="pdi-uM-Vba">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="0.63921570780000003" green="0.12549020350000001" blue="0.082352943720000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="myCell" id="tDI-kT-kzt">
+                                <rect key="frame" x="0.0" y="50" width="393" height="44.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tDI-kT-kzt" id="RNb-g8-gx2">
+                                    <rect key="frame" x="0.0" y="0.0" width="393" height="44.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="68l-eN-vI2" kind="show" identifier="showDetail" id="kpq-IG-yjD"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="SwX-As-bFu" id="jvQ-EE-TgN"/>
+                            <outlet property="delegate" destination="SwX-As-bFu" id="TZf-F2-9zE"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="9HU-tj-5bf"/>
+                    <connections>
+                        <outlet property="tvListView" destination="pdi-uM-Vba" id="8Pa-EO-AqB"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MzH-7Q-ZhH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5303" y="401"/>
+        </scene>
         <!--내 편지함-->
         <scene sceneID="iOx-QI-lIf">
             <objects>
                 <viewController id="anj-32-CGV" customClass="MyMessageViewController" customModule="likelion12th_app" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="eO6-46-jgt" customClass="MyMessage">
+                    <view key="view" contentMode="scaleToFill" id="eO6-46-jgt" customClass="MessageCell" customModule="likelion12th_app" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="1" translatesAutoresizingMaskIntoConstraints="NO" id="HOf-He-OjV">
-                                <rect key="frame" x="24" y="144" width="344" height="32"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <segments>
-                                    <segment title="안 읽은 편지"/>
-                                    <segment title="전체" width="114"/>
-                                    <segment title="읽은 편지"/>
-                                </segments>
-                                <color key="selectedSegmentTintColor" red="0.14901961389999999" green="0.36078432199999999" blue="0.086274504660000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                            </segmentedControl>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="cj8-TY-V3Y">
-                                <rect key="frame" x="0.0" y="202" width="393" height="581"/>
+                                <rect key="frame" x="0.0" y="121" width="393" height="662"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="kug-Bn-Lg2">
@@ -415,12 +440,12 @@
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="Xj1-on-jTl">
                                         <rect key="frame" x="0.0" y="0.0" width="393" height="111"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bdD-cp-C4i">
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="bdD-cp-C4i" customClass="MessageCell" customModule="likelion12th_app" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="393" height="111"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DMp-g9-t92">
-                                                    <rect key="frame" x="67" y="16.333333333333336" width="85" height="78.333333333333314"/>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DMp-g9-t92">
+                                                    <rect key="frame" x="16" y="16.333333333333314" width="85" height="78.333333333333314"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="Ib3-n5-ydm"/>
                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="80" id="czk-VL-e9t"/>
@@ -429,21 +454,21 @@
                                                     <imageReference key="image" image="photo.circle" catalog="system" symbolScale="small"/>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="내용 표시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uCy-gY-fv0">
-                                                    <rect key="frame" x="172" y="63" width="185" height="21"/>
+                                                    <rect key="frame" x="125" y="62" width="185" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="new" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8XG-U1-2fB">
-                                                    <rect key="frame" x="16" y="45" width="32" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="보낸 사람" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNj-Kt-e7P">
+                                                    <rect key="frame" x="122" y="26" width="64" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="보낸 사람" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNj-Kt-e7P">
-                                                    <rect key="frame" x="172" y="26" width="64" height="21"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="시간 표시" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tqn-du-oq6">
+                                                    <rect key="frame" x="298" y="45" width="64" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -463,14 +488,55 @@
                         <viewLayoutGuide key="safeArea" id="dc6-jz-hh9"/>
                         <color key="backgroundColor" red="0.63921570780000003" green="0.12549020350000001" blue="0.082352943720000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                     </view>
-                    <navigationItem key="navigationItem" title="내 편지함" id="VO2-gd-fhv" customClass="My"/>
+                    <navigationItem key="navigationItem" title="내 편지함" id="VO2-gd-fhv"/>
                     <connections>
                         <outlet property="collectionView" destination="cj8-TY-V3Y" id="N1f-Iu-gUS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N70-98-bCH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5579.3893129770986" y="400.7042253521127"/>
+            <point key="canvasLocation" x="7315" y="401"/>
+        </scene>
+        <!--Message Detail View Controller-->
+        <scene sceneID="AZW-Gg-EiY">
+            <objects>
+                <viewController id="68l-eN-vI2" customClass="MessageDetailViewController" customModule="likelion12th_app" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aqJ-Pg-1qv">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="보낸 사람 표시 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tyx-xO-mo7">
+                                <rect key="frame" x="145" y="755" width="102" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rir-Cp-V87">
+                                <rect key="frame" x="8" y="152" width="377" height="291"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="내용 표시 " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W9S-0A-21N">
+                                <rect key="frame" x="162" y="504" width="68" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Ezk-OH-ZYV"/>
+                        <color key="backgroundColor" red="0.63921570780000003" green="0.12549020350000001" blue="0.082352943720000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Xyy-RI-4ev"/>
+                    <connections>
+                        <outlet property="imgView" destination="rir-Cp-V87" id="Wbt-8F-OhH"/>
+                        <outlet property="lblContent" destination="W9S-0A-21N" id="S69-Kr-0xw"/>
+                        <outlet property="lblSender" destination="tyx-xO-mo7" id="fv9-h2-39X"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eaj-ap-y88" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="6219" y="401"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="UYX-Ky-E1l">
