@@ -26,12 +26,11 @@ class CameraViewController: UIViewController,
     let placeholderText = "내용을 입력하세요."
     
     var ornaments = [Ornament]()
-    let senderName = "sj"
+    let senderName = UserManager.shared.userName
     let endPoint: String = "/message/new"
     
     @IBOutlet var treeImg: UIImageView!
     @IBOutlet var treeContent: UITextView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -94,7 +93,7 @@ class CameraViewController: UIViewController,
         let newOrnament = Ornament(image: image, text: contentText)
         ornaments.append(newOrnament)
         
-        NetworkManager.shared.postMessageData(to: endPoint, sender: senderName, receiver: receiverName, content: contentText) { result in
+        NetworkManager.shared.postMessageData(to: endPoint, sender: senderName!, receiver: receiverName, content: contentText) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):

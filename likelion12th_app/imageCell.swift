@@ -9,5 +9,7 @@ import UIKit
 
 // Custom UICollectionViewCell 클래스
 class ImageCell: UICollectionViewCell {
-    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet var content: UITextView!
+    @IBOutlet var receiver: UITextField!
+    @IBOutlet var contentImg: UIImageView!
 }

@@ -9,11 +9,16 @@ import UIKit
 
 class MemberViewController: UIViewController {
 
+    @IBOutlet var userName: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        userName.text = UserManager.shared.userName
     }
+    
     
 
     /*

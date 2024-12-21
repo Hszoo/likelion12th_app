@@ -24,7 +24,7 @@ class JoinViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     }
     
     /* 프로필 사진 선택 */
-    @IBAction func selectProfileImg(_ sender: UIButton) {
+    @IBAction func btnSelectProfileImg(_ sender: UIButton) {
         let imagePickerController = UIImagePickerController()
         imagePickerController.delegate = self
         imagePickerController.sourceType = .photoLibrary // 사진 라이브러리에서 사진을 선택하도록 설정
@@ -46,6 +46,7 @@ class JoinViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             print("이름을 입력하세요.")
             return
         }
+        UserManager.shared.userName = nameField.text
 
         let status = selectStatus.selectedSegmentIndex == 0 ? "BABYLION" : "ADULTLION"
 

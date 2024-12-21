@@ -8,14 +8,14 @@
 import UIKit
 
 
-class MessageSendViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate {
+class MessageSendViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet var content: UITextView!
     @IBOutlet var receiver: UITextField!
     @IBOutlet var contentImg: UIImageView!
     
     var ornaments = [Ornament]()
-    let senderName = "sj"
+    let senderName = UserManager.shared.userName
     let endPoint: String = "/message/new"
         
     override func viewDidLoad() {
@@ -43,11 +43,7 @@ class MessageSendViewController: UIViewController, UITextFieldDelegate, UITextVi
             return
         }
         
-        let newOrnament = Ornament(image: image, text: contentText)
-        ornaments.append(newOrnament)
-        
-        
-        NetworkManager.shared.postMessageData(to: endPoint, sender: senderName, receiver: receiverName, content: contentText) { result in
+        NetworkManager.shared.postMessageData(to: endPoint, sender: senderName!, receiver: receiverName, content: contentText) { result in
             DispatchQueue.main.async {
                 switch result {
                 case .success(let data):
@@ -58,6 +54,14 @@ class MessageSendViewController: UIViewController, UITextFieldDelegate, UITextVi
                 }
             }
         }
+    }
+    
+    @IBAction func btnSelectImage(_ sender: UIButton) {
+        let imagePickerController = UIImagePickerController()
+        imagePickerController.delegate = self
+        imagePickerController.sourceType = .photoLibrary // 사진 라이브러리에서 사진을 선택하도록 설정
+        imagePickerController.allowsEditing = true // 편집 가능
+        present(imagePickerController, animated: true, completion: nil)
     }
     
     /* 메시지 전송 */
@@ -71,13 +75,13 @@ class MessageSendViewController: UIViewController, UITextFieldDelegate, UITextVi
         _ = navigationController?.popViewController(animated: true)
         
     }
-
-    /* 메시지 트리로 전송 */
-    @IBAction func btnSendAll(_ sender: UIButton) {
-        sendMessage(to: "all")
-        guard let treeVC = storyboard?.instantiateViewController(withIdentifier: "TreeViewController") as? TreeViewController else { return }
-                treeVC.ornaments = ornaments
-                navigationController?.pushViewController(treeVC, animated: true)
+    
+    // 이미지 선택 후 호출되는 메소드
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let selectedImage = info[.editedImage] as? UIImage {
+            contentImg.image = selectedImage // 이미지뷰에 선택한 사진을 설정
+        }
+        dismiss(animated: true, completion: nil)
     }
     
     private func showAlert(message: String) {
