@@ -71,11 +71,11 @@ class CameraViewController: UIViewController,
         sendMessage(to: "all")
         
         guard let treeVC = storyboard?.instantiateViewController(withIdentifier: "TreeViewController") as? TreeViewController else { return }
-                treeVC.ornaments = ornaments
-                navigationController?.pushViewController(treeVC, animated: true)
         
-        // 직전 view 이동
-        _ = navigationController?.popViewController(animated: true)
+        treeVC.ornaments = ornaments // 데이터 전달
+        print("CameraViewController ornaments:", ornaments) // 디버깅
+        
+        navigationController?.pushViewController(treeVC, animated: true)
     }
     
     /* 메시지 전송 */
@@ -98,7 +98,6 @@ class CameraViewController: UIViewController,
                 switch result {
                 case .success(let data):
                     let responseMessage = String(data: data, encoding: .utf8) ?? "응답 없음"
-                    self.showAlert(message: "전송 성공: \(responseMessage)")
                 case .failure(let error):
                     self.showAlert(message: "전송 실패: \(error.localizedDescription)")
                 }
